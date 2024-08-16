@@ -32,6 +32,25 @@ Option 1. we could turn the str into an array. Or an array of arrays (each word 
 Option 2. we could loop through the string and create a new string from that. 
 Option 3. there might be a js method that reverses strings
 
+My Second, Improved Solution:
+Option 1
+  Turn the string into multiple arrays, each array is array.split wherever there is a space (" ").
+  Filter(?) every array so that the letters are listed in reverse order.
+  Concatenate the arrays and turn them back into a string, adding 1 space (" ") between each array. 
+  * * * How do we account for multiple spaces in a row? * * *
+
+Code:
+
+Test:
+
+Optimize:
+
+
+
+
+
+My Initial Solution:
+
 Decided to do Option 2
 Loop through the given string, starting from the first index.
   if current index (i) is not a space (" ") && [i-1] is NOT a space - then add i's value to the front of an array named word[i] with an array method.
@@ -48,13 +67,4 @@ spaceAtIndex7 = [ ]
 wordAtIndex8 = [n, a]
 spaceAtIndex10 = [ ]
 wordAtIndex11 = [!, a, l, p, m a, x, e]
-
-
-Code:
-
-Test:
-
-Optimize:
-
-
 */
