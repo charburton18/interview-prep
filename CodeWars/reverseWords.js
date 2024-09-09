@@ -6,9 +6,9 @@
 // "This is an example!" ==> "sihT si na !elpmaxe"
 // "double  spaces"      ==> "elbuod  secaps"
 
-function reverseWords(str) {
+// function reverseWords(str) {
 
-}
+// }
 
 /*
 Restate:
@@ -36,10 +36,34 @@ My Second, Improved Solution:
 Option 1
   Turn the string into multiple arrays, each array is array.split wherever there is a space (" ").
   Filter(?) every array so that the letters are listed in reverse order.
-  Concatenate the arrays and turn them back into a string, adding 1 space (" ") between each array. 
+  Concatenate the arrays and turn them back into a string, adding 1 space (" ") between each array. (use .join?)
   * * * How do we account for multiple spaces in a row? * * *
 
 Code:
+*/
+// define a function called reverseStr with an input of str
+debugger
+const reverseStr = (str) => {
+  // define strAsArr as str split into array elements at each space
+  const strAsArr = str.split(" "); // [ 'hi', 'there!']
+  // create a loop which goes through each word and reverses the order of letters
+  for (let i = 0; i < strAsArr.length; i++) { // [ 'hi', 'there!']
+    //take the last letter of each array element and make it the first letter
+    for (let j = 0; j < [i].length; j++) { 
+      // take the letter at the j index and add that value into the last index
+      let partialReverse = strAsArr[i] + strAsArr[i].charAt(j); // '!there!'
+      let reversedWord = partialReverse.slice(1, partialReverse.length); 
+      // save reversedWord as a variable to concatenate with other variables later ???????
+    }
+  }
+  const finalStr = 0;
+  // return the value of the mutated array
+  return finalStr;
+}
+
+console.log(reverseStr("hi there!"));
+
+/*
 
 Test:
 
