@@ -43,25 +43,19 @@ Code:
 */
 // define a function called reverseStr with an input of str
 debugger
-const reverseStr = (str) => {
+const reverseWords = (str) => { // str = 'hi there!'
   // define strAsArr as str split into array elements at each space
-  const strAsArr = str.split(" "); // [ 'hi', 'there!']
-  // create a loop which goes through each word and reverses the order of letters
-  for (let i = 0; i < strAsArr.length; i++) { // [ 'hi', 'there!']
-    //take the last letter of each array element and make it the first letter
-    for (let j = 0; j < [i].length; j++) { 
-      // take the letter at the j index and add that value into the last index (use slice -1??)
-      let partialReverse = strAsArr[i] + strAsArr[i].charAt(j); // '!there!'
-      let reversedWord = partialReverse.slice(1, partialReverse.length); 
-      // save reversedWord as a variable to concatenate with other variables later ???????
-    }
-  }
-  const finalStr = 0;
-  // return the value of the mutated array
-  return finalStr;
+  const strAsArr = str.split(" "); // strAsArr = [ 'hi', 'there!']
+  // iterate through the substrings split each one into another array using .split('') => gives us an array of arrays
+  // flip the substrings order of letters using .reverse
+  // use .join('') to concatenate all internal array values
+  // use .join(' ') to concatenate all remaining array values with spaces in between
+  const arrOfArrs = strAsArr.map((subStr) => {return subStr.split('').reverse().join('')}).join(' '); // ['ih', '!ereht']
+  return arrOfArrs;
+  // return reversedArr;
 }
 
-console.log(reverseStr("hi there!"));
+console.log(reverseWords("hi  there!"));
 
 /*
 
@@ -79,9 +73,9 @@ My Initial Solution:
 
 Decided to do Option 2
 Loop through the given string, starting from the first index.
-  if current index (i) is not a space (" ") && [i-1] is NOT a space - then add i's value to the front of an array named word[i] with an array method.
-    else if current index (i) is not a space (" ") && [i-1] IS space - then define a new arr called word[i] and add i's value to the front of an array named word[i] with an array method.
-    else if current index (i) is a space (" ") then define a new arr called space[i] add the current index value to space[i]. 
+if current index (i) is not a space (" ") && [i-1] is NOT a space - then add i's value to the front of an array named word[i] with an array method.
+else if current index (i) is not a space (" ") && [i-1] IS space - then define a new arr called word[i] and add i's value to the front of an array named word[i] with an array method.
+else if current index (i) is a space (" ") then define a new arr called space[i] add the current index value to space[i]. 
 before loop closes concatenate all arrays together. 
 
 Create a string from that concatenated arr. Return the value of the final string.
@@ -94,3 +88,14 @@ wordAtIndex8 = [n, a]
 spaceAtIndex10 = [ ]
 wordAtIndex11 = [!, a, l, p, m a, x, e]
 */
+
+
+// for (let i = 0; i < strAsArr.length; i++) { // [ 'hi', 'there!']
+//   //take the last letter of each array element and make it the first letter
+//   for (let j = 0; j < [i].length; j++) { 
+//     // take the letter at the j index and add that value into the last index (use slice -1??)
+//     let partialReverse = strAsArr[i] + strAsArr[i].charAt(j); // '!there!'
+//     let reversedWord = partialReverse.slice(1, partialReverse.length); 
+//     // save reversedWord as a variable to concatenate with other variables later ???????
+//   }
+// }
