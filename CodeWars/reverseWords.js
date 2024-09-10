@@ -50,7 +50,7 @@ const reverseStr = (str) => {
   for (let i = 0; i < strAsArr.length; i++) { // [ 'hi', 'there!']
     //take the last letter of each array element and make it the first letter
     for (let j = 0; j < [i].length; j++) { 
-      // take the letter at the j index and add that value into the last index
+      // take the letter at the j index and add that value into the last index (use slice -1??)
       let partialReverse = strAsArr[i] + strAsArr[i].charAt(j); // '!there!'
       let reversedWord = partialReverse.slice(1, partialReverse.length); 
       // save reversedWord as a variable to concatenate with other variables later ???????
