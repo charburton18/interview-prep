@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Calculator</title>
+</head>
+<body>
+  <script>
+    // Function prompts the user for an operation, and stores it in a variable called operation(+, -, *, or /).
+    const promptOperation = () => {
+      const operation = prompt('Type one of the following operations: +, -, *, or /');
+      return operation;
+  }
+
+    // Function prompts the user for a number, and stores it in a variable called num1.
+    const promptNum1 = () => {
+      const num1 = parseFloat(prompt('Type a number'));
+      return num1;
+    }
+
+    // Function prompts the user for another number, and stores it in a variable called num2.
+    const promptNum2 = () => {
+      const num2 = parseFloat(prompt('Type a second number'));
+      return num2;
+    }
+
+    // Function calculates the result of the operation applied to num1 and num2.
+    const calculate = (operation, num1, num2) => {
+      switch (operation) {
+        case '+':
+          return num1 + num2;
+        case '-':
+          return num1 - num2;
+        case '*':
+          return num1 * num2;
+        case '/':
+          // checks for divide by 0
+          if (num2 === 0) {
+            return 'Cannot divide by zero'
+          } 
+          return num1 / num2; 
+        default:
+          return 'Unable to compute, please refresh the page and try again.';
+      }
+    }
+
+    const runCalculator = () => {
+      const operation = promptOperation();
+      const num1 = promptNum1();
+      const num2 = promptNum2();
+      const result = calculate(operation, num1, num2);
+      alert(`Result: ${result}`)
+      return result;
+    }
+
+    console.log(runCalculator());
+  </script>
+  
+</body>
+</html>
