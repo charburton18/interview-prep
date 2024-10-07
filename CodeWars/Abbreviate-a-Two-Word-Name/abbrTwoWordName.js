@@ -21,20 +21,30 @@ a b => A.B
 Approach:
 - Define the first letter as firstInitial
 - Define the letter after the space as lastInitial
-- use toUppercase() on the first letter and the first letter after the space
+- use toUppercase() on the firstInitial and lastInitial
 - return the two upper-cased letters with a '.' in between them
 
 Code:
 */
-function abbrevName(name) {
-
+function abbrevName(name) { // Sam Harris
+//Define the first letter as firstInitial
+  const firstInitial = name.substring(0,1);
+//Define the space's index number as onlySpaceIndex
+  const onlySpaceIndex = name.indexOf(' ');
+//Define the letter after the space as lastInitial
+  const lastInitial = name.substring(onlySpaceIndex+1, onlySpaceIndex+2);
+//use toUppercase() on the firstInitial and lastInitial
+// return the two upper-cased letters with a '.' in between them
+  return console.log(firstInitial.toUpperCase() + '.' + lastInitial.toUpperCase())
 }
+
+abbrevName('waDASDm qaSDwarris');
 
 /*
 
-Test:
+****************Test:
 
-Optimize:
+****************Optimize:
 
 
 */
