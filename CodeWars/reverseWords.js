@@ -24,7 +24,7 @@ Examples:
 "This is an example!" ==> "sihT si na !elpmaxe"
 "double  spaces"      ==> "elbuod  secaps"
 1                     ==> "Sorry, please use quotes around your phrase."
-"!? !?"               ==> "?! ?!"
+"!? !?"               ==> "?! ?!" 
 
 Approach/Pseudocode:
 Brainstorming:
