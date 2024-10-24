@@ -39,10 +39,9 @@ Option 1
   Concatenate the arrays and turn them back into a string, adding 1 space (" ") between each array. (use .join?)
   * * * How do we account for multiple spaces in a row? * * *
 
-Code:
+Code with comments:
 */
 // define a function called reverseStr with an input of str
-debugger
 const reverseWords = (str) => { // str = 'hi there!'
   // define strAsArr as str split into array elements at each space
   const strAsArr = str.split(" "); // strAsArr = [ 'hi', 'there!']
@@ -55,7 +54,14 @@ const reverseWords = (str) => { // str = 'hi there!'
   // return reversedArr;
 }
 
-console.log(reverseWords("hi  there!"));
+// Code without comments:
+function reverseWords(str){
+  const strAsArr = str.split(" ");
+  const arrOfArrs = strAsArr.map((subStr) => {return subStr.split('').reverse().join('')}).join(' ');
+  return arrOfArrs;
+};
+
+// passes all tests! :)
 
 /*
 
@@ -64,10 +70,6 @@ Test:
 Optimize:
 
 Notes:
-
-
-
-
 
 My Initial Solution:
 
