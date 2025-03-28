@@ -1,7 +1,7 @@
-// // Given a string S. The task is to find the first repeated character in it.
-// // We need to find the character that occurs more than once and whose index of second occurrence is smallest. S contains only lowercase letters.
+// Given a string S. The task is to find the first repeated character in it.
+// We need to find the character that occurs more than once and whose index of second occurrence is smallest. S contains only lowercase letters.
 
-// // You don't need to read input or print anything. Your task is to complete the function firstRepChar() which accepts a string S as input parameter and returns a string containing first repeated character in it. If there is no repeated character in the string S then return "-1".
+// You don't need to read input or print anything. Your task is to complete the function firstRepChar() which accepts a string S as input parameter and returns a string containing first repeated character in it. If there is no repeated character in the string S then return "-1".
 
 // class Solution {
 //     firstRepChar(s) {
@@ -28,9 +28,9 @@
 // }
 
 
-
-// // LOTS of syntax errors.
-// // Forgot () after if statements.
-// // Forgot = after arrowfunc name.
-// // Forgot that let i = 0 is fine but NOT i >= 0.
-// // Forgot to make repeatedIndicies empty arr at top level scope inside function
+// Self-evaluation
+  // Syntax errors.
+  // () after if statements.
+  // = after arrowfunc name.
+  // let i = 0 is fine but NOT i >= 0.
+  // make repeatedIndicies empty arr at top level scope inside function
