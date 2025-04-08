@@ -21,7 +21,6 @@
 //   });
 // });
 
-
 /*
 Restate:
 Given a string, replace all letters with their numerical position in the alphabet. If given another char, don't return it.
@@ -51,17 +50,35 @@ Way 1:
 Code:
 */
 
+// VERSION 1
+// function alphabetPosition(text) {
+//   const alphabetArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]; // could use string instead
+//   let result = "";
+//   for (let i = 0; i < text.length; i++) { // could this be a map instead of a for loop?
+//     if (alphabetArr.includes(text[i].toLowerCase())) {
+//       result = result + (alphabetArr.indexOf(text[i].toLowerCase()) + 1) + " ";
+//     } else {
+//       continue;
+//     };
+//   };
+//   result = result.trim(); // is there another way to do this?
+//   return result;
+// };
+
+// alphabetPosition("The sunset sets at twelve o' clock.");
+
+// VERSION 2
 function alphabetPosition(text) {
-  const alphabetArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-  let result = "";
-  for (let i = 0; i < text.length; i++) {
-    if (alphabetArr.includes(text[i].toLowerCase())) {
-      result = result + (alphabetArr.indexOf(text[i].toLowerCase()) + 1) + " ";
+  const alphabetStr = "abcdefghijklmnopqrstuvwxyz"; // changed from arr to a string
+  const textArr = text.split("");
+  let result = []; // changed from string to array
+  textArr.map((currentChar) => { // used map instead of for loop
+    if (alphabetStr.includes(currentChar.toLowerCase())) {
+      result.push((alphabetStr.indexOf(currentChar.toLowerCase()) + 1));
     } else {
-      continue;
     };
-  };
-  result = result.trim();
+  });
+  result = result.join(" "); // used join instead of trim
   return result;
 };
 
